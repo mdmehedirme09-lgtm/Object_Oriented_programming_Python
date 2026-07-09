@@ -3,12 +3,13 @@ class InvertedDict():
         original = {
         "key1": "value1",
         "key2": "value2",
-        "key3": "value1"
+        "key3": "value1",
+        "key":  "value1"
+
         }
         reverse={}
-        for key,value in original.items():
-            if value not in reverse:
-                reverse[value]=[]
-            reverse[value].append(key)
+        for key,values in original.items():
+            reverse.setdefault(values,[])
+            reverse[values].append(key)
         print(reverse)
 obj=InvertedDict()
