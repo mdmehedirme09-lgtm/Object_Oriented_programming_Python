@@ -1,15 +1,21 @@
-import json
-
-class FilterEven():
+class FilterEven:
     def __init__(self):
-        my_dict=json.loads(input("Enter the dictionary: "))
-        print()
-        result={}
-        for key,value in my_dict.items():
-            even_number=[]
-            for num in value:
-                if num%2==0:
-                    even_number.append(num)
-            result[key]=even_number
-        print(result)
-output=FilterEven()
+        self.Dict={"v":[1,4,6,10],"VI":[1,4,12],"VII":[1,3,8]}
+        self.lists=[]
+        self.new_list=[]
+        for key in self.Dict:
+            self.lists.append(self.Dict[key])
+            
+        for i in range(len(self.lists)):
+            self.new_list.append([])
+            for j in range(len(self.lists[i])):
+                if self.lists[i][j]%2==0:
+                    self.new_list[i].append(self.lists[i][j])
+
+        # print(self.new_list)
+        k=0
+        for key in self.Dict:
+            self.Dict[key]=self.new_list[k]
+            k+=1
+        print(self.Dict)
+a=FilterEven()
