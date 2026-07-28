@@ -1,0 +1,28 @@
+password = input()
+
+lower = False
+upper = False
+digit = False
+special = False
+
+for ch in password:
+    if ch.islower():
+        lower = True
+    elif ch.isupper():
+        upper = True
+    elif ch.isdigit():
+        digit = True
+    elif ch in "_$#@":
+        special = True
+
+if lower and upper and digit and special:
+    print("OK")
+else:
+    if not lower:
+        print("Lowercase Missing")
+    if not upper:
+        print("Uppercase Missing")
+    if not digit:
+        print("Digit Missing")
+    if not special:
+        print("Special Missing")
